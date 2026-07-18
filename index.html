@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Hashim — Software Engineer</title>
+  <meta name="description" content="Ahmed Mohamed Hashim — Software engineer building production systems: Flutter, full-stack web, and backends. Salalah, Oman.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+</head>
+<body>
+
+  <nav class="nav">
+    <span class="nav-name" data-i18n="nav_name">Ahmed Hashim</span>
+    <div class="nav-actions">
+      <a class="nav-link" href="https://github.com/KakashiCK440" target="_blank" rel="noopener">GitHub</a>
+      <a class="nav-link" href="mailto:ahm452322@gmail.com" data-i18n="nav_contact">Contact</a>
+      <button class="lang-btn" id="lang-toggle">عربي</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-text">
+      <p class="hero-hello" data-i18n="hero_hello">Hi, I'm</p>
+      <h1 data-i18n="hero_name">Ahmed Mohamed Hashim</h1>
+      <h2 class="hero-title" data-i18n="hero_title">Software Engineer — Flutter &amp; Full-Stack</h2>
+      <p class="hero-sub" data-i18n="hero_sub">I build production systems end to end — mobile apps, web dashboards, and the backends behind them — and ship them to real users.</p>
+      <p class="hero-loc">📍 <span data-i18n="hero_loc">Salalah, Oman</span></p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects" data-i18n="cta_work">See my work</a>
+        <a class="btn btn-ghost" href="mailto:ahm452322@gmail.com" data-i18n="cta_email">Email me</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/ahmed.jpg" alt="Ahmed Mohamed Hashim" width="640" height="800">
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <h3 class="section-title" data-i18n="about_title">About me</h3>
+    <p class="about-text" data-i18n="about_body">
+      I'm a software engineer with a B.Sc. in Computer Science (MTI, 2025), based in Salalah, Oman.
+      What sets me apart as a junior engineer: I already run two systems in production with real daily
+      users — a complete business operations platform I built for the company I work at, and a
+      multi-tenant Discord product I designed, built, and deployed on my own. I care about the whole
+      picture: clean architecture, security done properly, Arabic-first interfaces, and software that
+      real people actually use every day.
+    </p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <h3 class="section-title" data-i18n="proj_title">Projects</h3>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-banner banner-a"><span>🧽</span></div>
+        <div class="card-body">
+          <div class="card-head">
+            <h4 data-i18n="p1_name">Matlob Operations Dashboard &amp; Staff Portal</h4>
+            <span class="pill pill-live" data-i18n="pill_prod">In production</span>
+          </div>
+          <p data-i18n="p1_desc">
+            Complete operations platform for a cleaning-services company: orders &amp; contracts,
+            multi-worker scheduling, driver routing with car-capacity monitoring, payments, refunds
+            and financial reporting — plus a self-service staff portal in 7 languages where every
+            worker and driver sees only their own schedule. Arabic-first, fully RTL, in daily use.
+          </p>
+          <div class="chips">
+            <span>JavaScript</span><span>Vite</span><span>Supabase</span><span>PostgreSQL</span><span>PWA</span>
+          </div>
+          <p class="card-note" data-i18n="p1_note">Private production repo — happy to walk through the code in an interview.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-banner banner-b"><span>⚔️</span></div>
+        <div class="card-body">
+          <div class="card-head">
+            <h4 data-i18n="p2_name">Discord Guild Management Bot &amp; Web Dashboard</h4>
+            <span class="pill pill-live" data-i18n="pill_live">Live</span>
+          </div>
+          <p data-i18n="p2_desc">
+            Multi-tenant Discord bot serving multiple game guilds: war-event scheduling with automated
+            polls and timezone-aware reminders, player profiles and leaderboards, and an integrated web
+            dashboard with Discord OAuth2 login, signed sessions, rate limiting and subscription billing.
+          </p>
+          <div class="chips">
+            <span>Python</span><span>discord.py</span><span>aiohttp</span><span>PostgreSQL</span><span>OAuth2</span>
+          </div>
+          <p class="card-note" data-i18n="p2_note">Private repo — built, deployed and operated solo.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-banner banner-c"><span>🎯</span></div>
+        <div class="card-body">
+          <div class="card-head">
+            <h4 data-i18n="p3_name">Real-Time Object Detection &amp; Tracking</h4>
+            <span class="pill pill-grad" data-i18n="pill_grad">Graduation project</span>
+          </div>
+          <p data-i18n="p3_desc">
+            Real-time multi-object detection and tracking: YOLO + DeepSORT inference backend served
+            over FastAPI (Dockerized, deployed on Fly.io), consumed by a Flutter mobile app — with
+            stable track IDs and full XY path visualization.
+          </p>
+          <div class="chips">
+            <span>Python</span><span>YOLO</span><span>DeepSORT</span><span>FastAPI</span><span>Flutter</span>
+          </div>
+          <a class="card-link" href="https://github.com/KakashiCK440/Graduation-project" target="_blank" rel="noopener" data-i18n="p3_link">View on GitHub ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <h3 class="section-title" data-i18n="skills_title">Skills</h3>
+    <div class="skills">
+      <div class="skill-group">
+        <h5 data-i18n="sk_mobile">Mobile</h5>
+        <div class="chips"><span>Flutter</span><span>Dart</span><span>Clean Architecture</span><span>Bloc</span><span>MVVM</span></div>
+      </div>
+      <div class="skill-group">
+        <h5 data-i18n="sk_backend">Backend</h5>
+        <div class="chips"><span>Python</span><span>FastAPI</span><span>Flask</span><span>aiohttp</span><span>PostgreSQL</span><span>Supabase</span><span>REST APIs</span></div>
+      </div>
+      <div class="skill-group">
+        <h5 data-i18n="sk_web">Web</h5>
+        <div class="chips"><span>JavaScript</span><span>Vite</span><span>HTML/CSS</span><span data-i18n="sk_rtl">RTL &amp; i18n</span></div>
+      </div>
+      <div class="skill-group">
+        <h5 data-i18n="sk_other">Tools &amp; more</h5>
+        <div class="chips"><span>C++</span><span>C#</span><span>SQL</span><span>Docker</span><span>Git</span><span>Koyeb / Fly.io</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <h3 class="section-title" data-i18n="contact_title">Let's talk</h3>
+    <p data-i18n="contact_body">Open to software engineering roles and interesting projects.</p>
+    <div class="hero-cta center">
+      <a class="btn btn-primary" href="mailto:ahm452322@gmail.com">ahm452322@gmail.com</a>
+      <a class="btn btn-ghost" href="https://github.com/KakashiCK440" target="_blank" rel="noopener">github.com/KakashiCK440</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span data-i18n="footer">© 2026 Ahmed Mohamed Hashim</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
