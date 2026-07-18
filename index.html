@@ -7,43 +7,50 @@
   <meta name="description" content="Ahmed Mohamed Hashim — Software engineer building production systems: Flutter, full-stack web, and backends. Salalah, Oman.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2318181B'/><text x='50' y='68' font-size='52' font-family='monospace' fill='%23FAFAFA' text-anchor='middle'>A_</text></svg>">
 </head>
 <body>
 
   <nav class="nav">
-    <span class="nav-name" data-i18n="nav_name">Ahmed Hashim</span>
+    <a class="nav-name mono" href="#top">ahmed.hashim<span class="cursor">_</span></a>
     <div class="nav-actions">
-      <a class="nav-link" href="https://github.com/KakashiCK440" target="_blank" rel="noopener">GitHub</a>
-      <a class="nav-link" href="mailto:ahm452322@gmail.com" data-i18n="nav_contact">Contact</a>
-      <button class="lang-btn" id="lang-toggle">عربي</button>
+      <a class="nav-link mono" href="https://github.com/KakashiCK440" target="_blank" rel="noopener">github</a>
+      <a class="nav-link mono" href="#contact" data-i18n="nav_contact">contact</a>
+      <button class="lang-btn mono" id="lang-toggle" aria-label="Switch language">[ عربي ]</button>
     </div>
   </nav>
 
   <!-- HERO -->
-  <header class="hero">
-    <div class="hero-text">
-      <p class="hero-hello" data-i18n="hero_hello">Hi, I'm</p>
+  <header class="hero" id="top">
+    <div class="hero-text reveal">
+      <p class="kicker mono">$ whoami</p>
       <h1 data-i18n="hero_name">Ahmed Mohamed Hashim</h1>
-      <h2 class="hero-title" data-i18n="hero_title">Software Engineer — Flutter &amp; Full-Stack</h2>
+      <p class="hero-title" data-i18n="hero_title">Software Engineer — Flutter &amp; Full-Stack</p>
       <p class="hero-sub" data-i18n="hero_sub">I build production systems end to end — mobile apps, web dashboards, and the backends behind them — and ship them to real users.</p>
-      <p class="hero-loc">📍 <span data-i18n="hero_loc">Salalah, Oman</span></p>
+      <p class="hero-loc mono">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span data-i18n="hero_loc">Salalah, Oman</span>
+      </p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#projects" data-i18n="cta_work">See my work</a>
-        <a class="btn btn-ghost" href="mailto:ahm452322@gmail.com" data-i18n="cta_email">Email me</a>
+        <a class="btn btn-solid" href="#projects"><span data-i18n="cta_work">view projects</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a class="btn btn-line" href="mailto:ahm452322@gmail.com" data-i18n="cta_email">email me</a>
       </div>
     </div>
-    <div class="hero-photo">
-      <img src="assets/ahmed.jpg" alt="Ahmed Mohamed Hashim" width="640" height="800">
+    <div class="hero-photo reveal">
+      <div class="frame">
+        <img src="assets/ahmed.jpg" alt="Ahmed Mohamed Hashim" width="640" height="800">
+      </div>
     </div>
   </header>
 
   <!-- ABOUT -->
   <section class="section" id="about">
-    <h3 class="section-title" data-i18n="about_title">About me</h3>
-    <p class="about-text" data-i18n="about_body">
+    <h2 class="sec reveal"><span class="mono sec-tag">01</span><span data-i18n="about_title">about</span></h2>
+    <p class="about-text reveal" data-i18n="about_body">
       I'm a software engineer with a B.Sc. in Computer Science (MTI, 2025), based in Salalah, Oman.
       What sets me apart as a junior engineer: I already run two systems in production with real daily
       users — a complete business operations platform I built for the company I work at, and a
@@ -55,106 +62,104 @@
 
   <!-- PROJECTS -->
   <section class="section" id="projects">
-    <h3 class="section-title" data-i18n="proj_title">Projects</h3>
+    <h2 class="sec reveal"><span class="mono sec-tag">02</span><span data-i18n="proj_title">projects</span></h2>
 
-    <div class="cards">
-      <article class="card">
-        <div class="card-banner banner-a"><span>🧽</span></div>
-        <div class="card-body">
-          <div class="card-head">
-            <h4 data-i18n="p1_name">Matlob Operations Dashboard &amp; Staff Portal</h4>
-            <span class="pill pill-live" data-i18n="pill_prod">In production</span>
-          </div>
-          <p data-i18n="p1_desc">
-            Complete operations platform for a cleaning-services company: orders &amp; contracts,
-            multi-worker scheduling, driver routing with car-capacity monitoring, payments, refunds
-            and financial reporting — plus a self-service staff portal in 7 languages where every
-            worker and driver sees only their own schedule. Arabic-first, fully RTL, in daily use.
-          </p>
-          <div class="chips">
-            <span>JavaScript</span><span>Vite</span><span>Supabase</span><span>PostgreSQL</span><span>PWA</span>
-          </div>
-          <p class="card-note" data-i18n="p1_note">Private production repo — happy to walk through the code in an interview.</p>
+    <div class="projects">
+      <article class="proj reveal">
+        <div class="proj-top mono">
+          <span class="idx">/01</span>
+          <span class="status"><span class="dot"></span><span data-i18n="pill_prod">IN PRODUCTION</span></span>
         </div>
+        <h3 data-i18n="p1_name">Matlob Operations Dashboard &amp; Staff Portal</h3>
+        <p data-i18n="p1_desc">
+          Complete operations platform for a cleaning-services company: orders &amp; contracts,
+          multi-worker scheduling, driver routing with car-capacity monitoring, payments, refunds
+          and financial reporting — plus a self-service staff portal in 7 languages where every
+          worker and driver sees only their own schedule. Arabic-first, fully RTL, in daily use.
+        </p>
+        <p class="stack mono">JavaScript · Vite · Supabase · PostgreSQL · PWA</p>
+        <p class="proj-note" data-i18n="p1_note">Private production repo — happy to walk through the code in an interview.</p>
       </article>
 
-      <article class="card">
-        <div class="card-banner banner-b"><span>⚔️</span></div>
-        <div class="card-body">
-          <div class="card-head">
-            <h4 data-i18n="p2_name">Discord Guild Management Bot &amp; Web Dashboard</h4>
-            <span class="pill pill-live" data-i18n="pill_live">Live</span>
-          </div>
-          <p data-i18n="p2_desc">
-            Multi-tenant Discord bot serving multiple game guilds: war-event scheduling with automated
-            polls and timezone-aware reminders, player profiles and leaderboards, and an integrated web
-            dashboard with Discord OAuth2 login, signed sessions, rate limiting and subscription billing.
-          </p>
-          <div class="chips">
-            <span>Python</span><span>discord.py</span><span>aiohttp</span><span>PostgreSQL</span><span>OAuth2</span>
-          </div>
-          <p class="card-note" data-i18n="p2_note">Private repo — built, deployed and operated solo.</p>
+      <article class="proj reveal">
+        <div class="proj-top mono">
+          <span class="idx">/02</span>
+          <span class="status"><span class="dot"></span><span data-i18n="pill_live">LIVE</span></span>
         </div>
+        <h3 data-i18n="p2_name">Discord Guild Management Bot &amp; Web Dashboard</h3>
+        <p data-i18n="p2_desc">
+          Multi-tenant Discord bot serving multiple game guilds: war-event scheduling with automated
+          polls and timezone-aware reminders, player profiles and leaderboards, and an integrated web
+          dashboard with Discord OAuth2 login, signed sessions, rate limiting and subscription billing.
+        </p>
+        <p class="stack mono">Python · discord.py · aiohttp · PostgreSQL · OAuth2</p>
+        <p class="proj-note" data-i18n="p2_note">Private repo — built, deployed and operated solo.</p>
       </article>
 
-      <article class="card">
-        <div class="card-banner banner-c"><span>🎯</span></div>
-        <div class="card-body">
-          <div class="card-head">
-            <h4 data-i18n="p3_name">Real-Time Object Detection &amp; Tracking</h4>
-            <span class="pill pill-grad" data-i18n="pill_grad">Graduation project</span>
-          </div>
-          <p data-i18n="p3_desc">
-            Real-time multi-object detection and tracking: YOLO + DeepSORT inference backend served
-            over FastAPI (Dockerized, deployed on Fly.io), consumed by a Flutter mobile app — with
-            stable track IDs and full XY path visualization.
-          </p>
-          <div class="chips">
-            <span>Python</span><span>YOLO</span><span>DeepSORT</span><span>FastAPI</span><span>Flutter</span>
-          </div>
-          <a class="card-link" href="https://github.com/KakashiCK440/Graduation-project" target="_blank" rel="noopener" data-i18n="p3_link">View on GitHub ↗</a>
+      <article class="proj reveal">
+        <div class="proj-top mono">
+          <span class="idx">/03</span>
+          <span class="status grad"><span data-i18n="pill_grad">GRADUATION PROJECT</span></span>
         </div>
+        <h3 data-i18n="p3_name">Real-Time Object Detection &amp; Tracking</h3>
+        <p data-i18n="p3_desc">
+          Real-time multi-object detection and tracking: YOLO + DeepSORT inference backend served
+          over FastAPI (Dockerized, deployed on Fly.io), consumed by a Flutter mobile app — with
+          stable track IDs and full XY path visualization.
+        </p>
+        <p class="stack mono">Python · YOLO · DeepSORT · FastAPI · Flutter</p>
+        <a class="proj-link mono" href="https://github.com/KakashiCK440/Graduation-project" target="_blank" rel="noopener">
+          <span data-i18n="p3_link">view on github</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        </a>
       </article>
     </div>
   </section>
 
   <!-- SKILLS -->
   <section class="section" id="skills">
-    <h3 class="section-title" data-i18n="skills_title">Skills</h3>
+    <h2 class="sec reveal"><span class="mono sec-tag">03</span><span data-i18n="skills_title">skills</span></h2>
     <div class="skills">
-      <div class="skill-group">
-        <h5 data-i18n="sk_mobile">Mobile</h5>
-        <div class="chips"><span>Flutter</span><span>Dart</span><span>Clean Architecture</span><span>Bloc</span><span>MVVM</span></div>
+      <div class="skill-group reveal">
+        <h4 class="mono" data-i18n="sk_mobile">mobile</h4>
+        <ul><li>Flutter</li><li>Dart</li><li>Clean Architecture</li><li>Bloc · MVVM</li></ul>
       </div>
-      <div class="skill-group">
-        <h5 data-i18n="sk_backend">Backend</h5>
-        <div class="chips"><span>Python</span><span>FastAPI</span><span>Flask</span><span>aiohttp</span><span>PostgreSQL</span><span>Supabase</span><span>REST APIs</span></div>
+      <div class="skill-group reveal">
+        <h4 class="mono" data-i18n="sk_backend">backend</h4>
+        <ul><li>Python</li><li>FastAPI · Flask · aiohttp</li><li>PostgreSQL · Supabase</li><li>REST APIs</li></ul>
       </div>
-      <div class="skill-group">
-        <h5 data-i18n="sk_web">Web</h5>
-        <div class="chips"><span>JavaScript</span><span>Vite</span><span>HTML/CSS</span><span data-i18n="sk_rtl">RTL &amp; i18n</span></div>
+      <div class="skill-group reveal">
+        <h4 class="mono" data-i18n="sk_web">web</h4>
+        <ul><li>JavaScript (ES modules)</li><li>Vite</li><li>HTML / CSS</li><li data-i18n="sk_rtl">RTL &amp; i18n</li></ul>
       </div>
-      <div class="skill-group">
-        <h5 data-i18n="sk_other">Tools &amp; more</h5>
-        <div class="chips"><span>C++</span><span>C#</span><span>SQL</span><span>Docker</span><span>Git</span><span>Koyeb / Fly.io</span></div>
+      <div class="skill-group reveal">
+        <h4 class="mono" data-i18n="sk_other">tools</h4>
+        <ul><li>C++ · C# · SQL</li><li>Docker</li><li>Git</li><li>Koyeb · Fly.io</li></ul>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="section contact" id="contact">
-    <h3 class="section-title" data-i18n="contact_title">Let's talk</h3>
-    <p data-i18n="contact_body">Open to software engineering roles and interesting projects.</p>
-    <div class="hero-cta center">
-      <a class="btn btn-primary" href="mailto:ahm452322@gmail.com">ahm452322@gmail.com</a>
-      <a class="btn btn-ghost" href="https://github.com/KakashiCK440" target="_blank" rel="noopener">github.com/KakashiCK440</a>
+    <p class="kicker mono">$ ping ahmed</p>
+    <h2 class="contact-big reveal" data-i18n="contact_title">Let's build something.</h2>
+    <p class="contact-sub reveal" data-i18n="contact_body">Open to software engineering roles and interesting projects.</p>
+    <div class="contact-links reveal">
+      <a class="btn btn-solid" href="mailto:ahm452322@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        ahm452322@gmail.com
+      </a>
+      <a class="btn btn-line mono" href="https://github.com/KakashiCK440" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.78 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.14c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        github.com/KakashiCK440
+      </a>
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer mono">
     <span data-i18n="footer">© 2026 Ahmed Mohamed Hashim</span>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>

@@ -1,13 +1,11 @@
-// Bilingual EN/AR toggle — full page translation with RTL flip.
+// Bilingual EN/AR toggle (full RTL flip) + scroll-reveal motion.
 const AR = {
-  nav_name: 'أحمد هاشم',
   nav_contact: 'تواصل',
-  hero_hello: 'مرحباً، أنا',
   hero_name: 'أحمد محمد هاشم',
   hero_title: 'مهندس برمجيات — Flutter وتطوير متكامل',
   hero_sub: 'أبني أنظمة إنتاجية متكاملة — تطبيقات موبايل ولوحات تحكم ويب والأنظمة الخلفية وراءها — وأطلقها لمستخدمين حقيقيين.',
   hero_loc: 'صلالة، سلطنة عُمان',
-  cta_work: 'شاهد أعمالي',
+  cta_work: 'شاهد المشاريع',
   cta_email: 'راسلني',
   about_title: 'من أنا',
   about_body: 'مهندس برمجيات حاصل على بكالوريوس علوم الحاسب (جامعة MTI، 2025)، مقيم في صلالة، عُمان. ما يميّزني كمهندس في بداية مسيرته: أدير فعلياً نظامين في بيئة الإنتاج بمستخدمين حقيقيين يومياً — منصة تشغيل متكاملة بنيتها للشركة التي أعمل بها، ومنتج Discord متعدد المستأجرين صممته وبنيته ونشرته بنفسي. أهتم بالصورة الكاملة: معمارية نظيفة، وأمان مُطبَّق بشكل صحيح، وواجهات عربية أولاً، وبرمجيات يستخدمها الناس فعلاً كل يوم.',
@@ -23,19 +21,19 @@ const AR = {
   p2_note: 'مستودع خاص — بنيته ونشرته وأديره بمفردي.',
   p3_name: 'كشف وتتبع الأجسام في الوقت الفعلي',
   p3_desc: 'كشف وتتبع متعدد الأجسام في الوقت الفعلي: خادم استدلال YOLO + DeepSORT عبر FastAPI (بحاويات Docker، منشور على Fly.io)، يستهلكه تطبيق Flutter — مع معرّفات تتبع ثابتة ورسم كامل لمسار الحركة.',
-  p3_link: 'شاهده على GitHub ↗',
+  p3_link: 'شاهده على GitHub',
   skills_title: 'المهارات',
   sk_mobile: 'الموبايل',
-  sk_backend: 'الخلفية (Backend)',
+  sk_backend: 'الخلفية',
   sk_web: 'الويب',
   sk_rtl: 'RTL وتعدد اللغات',
-  sk_other: 'أدوات وأكثر',
-  contact_title: 'لنتحدث',
+  sk_other: 'أدوات',
+  contact_title: 'لنبنِ شيئاً معاً.',
   contact_body: 'متاح لوظائف هندسة البرمجيات والمشاريع المميزة.',
   footer: '© 2026 أحمد محمد هاشم',
 };
 
-// English strings are the ones written in the HTML — captured on first load.
+// English strings live in the HTML — captured on first load.
 const EN = {};
 document.querySelectorAll('[data-i18n]').forEach(el => { EN[el.dataset.i18n] = el.innerHTML; });
 
@@ -49,7 +47,7 @@ function apply() {
   });
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  document.getElementById('lang-toggle').textContent = lang === 'ar' ? 'English' : 'عربي';
+  document.getElementById('lang-toggle').textContent = lang === 'ar' ? '[ English ]' : '[ عربي ]';
   document.title = lang === 'ar' ? 'أحمد هاشم — مهندس برمجيات' : 'Ahmed Hashim — Software Engineer';
 }
 
@@ -60,3 +58,20 @@ document.getElementById('lang-toggle').addEventListener('click', () => {
 });
 
 apply();
+
+// Reveal-on-scroll (respects prefers-reduced-motion via CSS; the observer
+// just adds the class — with reduced motion the transition is disabled).
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Safety net: content must NEVER stay hidden. Hero reveals instantly, and if
+// the observer hasn't fired for anything within 1.5s (old browser, hidden
+// tab, JS quirk), reveal everything.
+document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('in'));
+setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
+}, 1500);
