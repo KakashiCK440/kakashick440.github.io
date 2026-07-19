@@ -180,3 +180,10 @@ svg { width: 1em; height: 1em; flex-shrink: 0; }
   .hero-sub, .hero-cta, .hero-loc { margin-inline: auto; justify-content: center; }
   .hero-cta { justify-content: center; }
 }
+
+/* ── project screenshots (client data pre-blurred) ─ */
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.shots.two { grid-template-columns: repeat(2, 1fr); }
+.shots a { display: block; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: border-color .2s, transform .2s; }
+.shots a:hover { border-color: var(--ink); transform: translateY(-2px); }
+.shots img { display: block; width: 100%; height: 96px; object-fit: cover; object-position: top; }
